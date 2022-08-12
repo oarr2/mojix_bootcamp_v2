@@ -1,9 +1,12 @@
 import streamlit as st
 from PIL import Image
 import pyperclip
+
 image = Image.open('image.png')
 
 st.image(image, caption='none')
+
+st.title('1. Walrus operator')
 
 
 txt = st.text_area('Text to analyze', '''
@@ -12,10 +15,14 @@ txt = st.text_area('Text to analyze', '''
      assign value to a variable within an expression like 
      conditional statements, loops, etc
      ''')
-st.write('1. Walrus operator', txt)
 
+st.header('Example')
 
-import pyperclip
-text_to_be_copied = 'The text to be copied to the clipboard.'
-pyperclip.copy(text_to_be_copied)
+code = '''Mylist = [1,2,3]
+if(l := len(mylist) > 2)
+print(l)'''
+st.code(code, language='python')
 
+st.header('output')
+
+st.code('3', language='python')
