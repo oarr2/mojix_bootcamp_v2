@@ -1,6 +1,5 @@
 import streamlit as st
 from PIL import Image
-import pyperclip
 
 image = Image.open('image.png')
 
