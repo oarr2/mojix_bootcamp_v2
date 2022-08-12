@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+import pyperclip
 image = Image.open('image.png')
 
 st.image(image, caption='none')
@@ -14,8 +15,7 @@ txt = st.text_area('Text to analyze', '''
 st.write('1. Walrus operator', txt)
 
 
-txt = st.text_area('another text to test', '''
-     hey there, Am i below?
-     ''')
-st.write('2. not sure', txt)
+import pyperclip
+text_to_be_copied = 'The text to be copied to the clipboard.'
+pyperclip.copy(text_to_be_copied)
 
